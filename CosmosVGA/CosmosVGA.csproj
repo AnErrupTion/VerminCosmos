@@ -1,0 +1,97 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <Platform>cosmos</Platform>
+        <SelfContained>True</SelfContained>
+        <BinFormat>ELF</BinFormat>
+        <StackCorruptionDetectionEnabled>True</StackCorruptionDetectionEnabled>
+        <StackCorruptionDetectionLevel>MethodFooters</StackCorruptionDetectionLevel>
+        <Deployment>BinaryImage</Deployment>
+        <DebugEnabled>True</DebugEnabled>
+        <DebugMode>Source</DebugMode>
+        <IgnoreDebugStubAttribute>False</IgnoreDebugStubAttribute>
+        <VMware_StackCorruptionDetectionEnabled>True</VMware_StackCorruptionDetectionEnabled>
+        <VMware_StackCorruptionDetectionLevel>MethodFooters</VMware_StackCorruptionDetectionLevel>
+        <VMware_Description>Use VMware Player or Workstation to deploy and debug.</VMware_Description>
+        <VMware_Deployment>ISO</VMware_Deployment>
+        <VMware_Launch>VMware</VMware_Launch>
+        <VMware_DebugEnabled>True</VMware_DebugEnabled>
+        <VMware_DebugMode>Source</VMware_DebugMode>
+        <VMware_IgnoreDebugStubAttribute>False</VMware_IgnoreDebugStubAttribute>
+        <VMware_CosmosDebugPort>Serial: COM1</VMware_CosmosDebugPort>
+        <VMware_VisualStudioDebugPort>Pipe: Cosmos\Serial</VMware_VisualStudioDebugPort>
+        <VMware_PxeInterface>192.168.0.8</VMware_PxeInterface>
+        <VMware_EnableGDB>False</VMware_EnableGDB>
+        <VMware_StartCosmosGDB>False</VMware_StartCosmosGDB>
+        <Name>ISO User 001</Name>
+        <HyperV_EnableGDB>False</HyperV_EnableGDB>
+        <HyperV_PxeInterface>192.168.0.8</HyperV_PxeInterface>
+        <HyperV_VisualStudioDebugPort>Pipe: CosmosSerial</HyperV_VisualStudioDebugPort>
+        <HyperV_CosmosDebugPort>Serial: COM1</HyperV_CosmosDebugPort>
+        <HyperV_IgnoreDebugStubAttribute>False</HyperV_IgnoreDebugStubAttribute>
+        <HyperV_DebugMode>Source</HyperV_DebugMode>
+        <HyperV_DebugEnabled>False</HyperV_DebugEnabled>
+        <HyperV_Launch>HyperV</HyperV_Launch>
+        <HyperV_Deployment>ISO</HyperV_Deployment>
+        <HyperV_Description>Use Hyper-V to deploy and debug.</HyperV_Description>
+        <HyperV_Name>ISO User 001</HyperV_Name>
+        <HyperV_StackCorruptionDetectionLevel>MethodFooters</HyperV_StackCorruptionDetectionLevel>
+        <HyperV_StackCorruptionDetectionEnabled>True</HyperV_StackCorruptionDetectionEnabled>
+        <ISO_StackCorruptionDetectionEnabled>True</ISO_StackCorruptionDetectionEnabled>
+        <ISO_StackCorruptionDetectionLevel>MethodFooters</ISO_StackCorruptionDetectionLevel>
+        <ISO_Name>ISO User 001</ISO_Name>
+        <ISO_Deployment>ISO</ISO_Deployment>
+        <ISO_Launch>None</ISO_Launch>
+        <ISO_DebugEnabled>False</ISO_DebugEnabled>
+        <ISO_DebugMode>Source</ISO_DebugMode>
+        <ISO_IgnoreDebugStubAttribute>False</ISO_IgnoreDebugStubAttribute>
+        <ISO_CosmosDebugPort>Serial: COM1</ISO_CosmosDebugPort>
+        <ISO_VisualStudioDebugPort>Pipe: Cosmos\Serial</ISO_VisualStudioDebugPort>
+        <ISO_PxeInterface>192.168.0.8</ISO_PxeInterface>
+        <ISO_EnableGDB>False</ISO_EnableGDB>
+        <ISO_StartCosmosGDB>False</ISO_StartCosmosGDB>
+        <HyperV_StartCosmosGDB>False</HyperV_StartCosmosGDB>
+        <User001_StackCorruptionDetectionEnabled>True</User001_StackCorruptionDetectionEnabled>
+        <User001_StackCorruptionDetectionLevel>MethodFooters</User001_StackCorruptionDetectionLevel>
+        <User001_Name>ISO User 001</User001_Name>
+        <User001_Deployment>ISO</User001_Deployment>
+        <User001_Launch>None</User001_Launch>
+        <User001_DebugEnabled>False</User001_DebugEnabled>
+        <User001_DebugMode>Source</User001_DebugMode>
+        <User001_IgnoreDebugStubAttribute>False</User001_IgnoreDebugStubAttribute>
+        <User001_CosmosDebugPort>Serial: COM1</User001_CosmosDebugPort>
+        <User001_VisualStudioDebugPort>Pipe: Cosmos\Serial</User001_VisualStudioDebugPort>
+        <User001_PxeInterface>192.168.0.8</User001_PxeInterface>
+        <User001_EnableGDB>False</User001_EnableGDB>
+        <User001_StartCosmosGDB>False</User001_StartCosmosGDB>
+        <ISOFile>bin\Debug\netcoreapp2.0\cosmos\CosmosVGA.iso</ISOFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <EnableGDB>False</EnableGDB>
+        <StartCosmosGDB>False</StartCosmosGDB>
+        <VisualStudioDebugPort>Pipe: Cosmos\Serial</VisualStudioDebugPort>
+        <CosmosDebugPort>Serial: COM1</CosmosDebugPort>
+        <Launch>None</Launch>
+        <Profile>User001</Profile>
+        <Description></Description>
+        <PxeInterface>192.168.0.8</PxeInterface>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+      <DebugEnabled>False</DebugEnabled>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Build" Version="0-*" NoWarn="NU1604" />
+        <PackageReference Include="Cosmos.Debug.Kernel" Version="0-*" NoWarn="NU1604" />
+        <PackageReference Include="Cosmos.System2" Version="0-*" NoWarn="NU1604" />
+    </ItemGroup>
+
+</Project>
